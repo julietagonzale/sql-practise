@@ -1,2 +1,16 @@
-# sql-practise
-Ejercicios de sql orientados a analisis de datos
+# SQL Practice
+
+Este repositorio contiene los ejercicios y proyectos que realizo durante el curso **SQL for Data Science (University of California, Davis)**.
+
+## Objetivos
+
+- Aprender SQL desde cero.
+- Practicar consultas para análisis de datos.
+- Construir un portfolio para Data Analytics.
+
+## Contenido
+
+- SELECT
+- FROM
+- LIMIT
+- CREATE TABLE
