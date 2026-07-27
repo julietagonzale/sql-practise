@@ -1,6 +1,9 @@
 -- =====================================
 -- SQL Practice
 -- Module 1 - SQL for Data Science (UC Davis)
+--
+-- Database: Chinook
+--
 -- Topics:
 -- - SELECT
 -- - FROM
@@ -8,22 +11,46 @@
 -- - CREATE TABLE
 -- =====================================
 
--- Seleccionar todas las columnas
-SELECT *
-FROM customers;
 
--- Seleccionar columnas específicas
-SELECT first_name, last_name
-FROM customers;
+-- =====================================
+-- SELECT *
+-- Selecciona todas las columnas de una tabla.
+-- =====================================
 
--- Mostrar los primeros 10 registros
 SELECT *
-FROM customers
+FROM Customer;
+
+
+-- =====================================
+-- SELECT columnas específicas
+-- Selecciona únicamente las columnas indicadas.
+-- =====================================
+
+SELECT
+    FirstName,
+    LastName,
+    Country
+FROM Customer;
+
+
+-- =====================================
+-- LIMIT
+-- Limita la cantidad de registros devueltos.
+-- =====================================
+
+SELECT *
+FROM Track
 LIMIT 10;
 
--- Crear una tabla
-CREATE TABLE employees (
-    id INTEGER,
-    first_name TEXT,
-    last_name TEXT
+
+-- =====================================
+-- CREATE TABLE
+-- Crea una nueva tabla.
+-- =====================================
+
+CREATE TABLE EmployeeExample (
+    EmployeeId INTEGER,
+    FirstName VARCHAR(40),
+    LastName VARCHAR(20),
+    HireDate DATE
 );
