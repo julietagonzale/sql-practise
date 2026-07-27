@@ -22,5 +22,7 @@ Este repositorio contiene los ejercicios y proyectos que realizo durante el curs
 - LIKE
 - ORDER BY
 - Operaciones matematicas
+- DISTINCT
+- COUNT
 - Funciones agregadas
 - GROUP BY
