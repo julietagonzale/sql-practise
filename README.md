@@ -26,3 +26,4 @@ Este repositorio contiene los ejercicios y proyectos que realizo durante el curs
 - COUNT
 - Funciones agregadas
 - GROUP BY
+- HAVING
