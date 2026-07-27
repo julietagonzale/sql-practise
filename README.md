@@ -14,3 +14,13 @@ Este repositorio contiene los ejercicios y proyectos que realizo durante el curs
 - FROM
 - LIMIT
 - CREATE TABLE
+- WHERE
+- BETWEEN
+- IN
+- AND
+- OR
+- LIKE
+- ORDER BY
+- Operaciones matematicas
+- Funciones agregadas
+- GROUP BY
