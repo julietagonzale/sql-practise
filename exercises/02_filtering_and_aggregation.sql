@@ -2,6 +2,8 @@
 -- SQL Practice
 -- Module 2 - SQL for Data Science (UC Davis)
 --
+-- Database: Chinook
+--
 -- Topics:
 -- - WHERE
 -- - BETWEEN
@@ -22,28 +24,30 @@
 -- =====================================
 
 SELECT *
-FROM customers
-WHERE country = 'USA';
+FROM Customer
+WHERE Country = 'USA';
 
 
 -- =====================================
 -- BETWEEN
--- Filtra valores dentro de un rango (incluye ambos extremos).
+-- Filtra valores dentro de un rango
+-- (incluye ambos extremos).
 -- =====================================
 
 SELECT *
-FROM products
-WHERE price BETWEEN 10 AND 50;
+FROM Track
+WHERE Milliseconds BETWEEN 200000 AND 300000;
 
 
 -- =====================================
 -- IN
--- Permite buscar varios valores sin escribir múltiples OR.
+-- Permite buscar varios valores sin escribir
+-- múltiples OR.
 -- =====================================
 
 SELECT *
-FROM customers
-WHERE country IN ('USA', 'Canada', 'Mexico');
+FROM Customer
+WHERE Country IN ('USA', 'Canada', 'Brazil');
 
 
 -- =====================================
@@ -53,9 +57,9 @@ WHERE country IN ('USA', 'Canada', 'Mexico');
 -- =====================================
 
 SELECT *
-FROM customers
-WHERE country = 'USA'
-AND city = 'New York';
+FROM Customer
+WHERE Country = 'USA'
+AND City = 'New York';
 
 
 -- =====================================
@@ -65,9 +69,9 @@ AND city = 'New York';
 -- =====================================
 
 SELECT *
-FROM customers
-WHERE country = 'USA'
-OR country = 'Canada';
+FROM Customer
+WHERE Country = 'USA'
+OR Country = 'Canada';
 
 
 -- =====================================
@@ -77,15 +81,15 @@ OR country = 'Canada';
 --
 -- Equivale a:
 --
--- country = 'USA'
--- OR (country = 'Canada' AND city = 'Toronto')
+-- Country = 'USA'
+-- OR (Country = 'Canada' AND City = 'Edmonton')
 -- =====================================
 
 SELECT *
-FROM customers
-WHERE country = 'USA'
-OR country = 'Canada'
-AND city = 'Toronto';
+FROM Customer
+WHERE Country = 'USA'
+OR Country = 'Canada'
+AND City = 'Edmonton';
 
 
 -- =====================================
@@ -98,10 +102,10 @@ AND city = 'Toronto';
 -- =====================================
 
 SELECT *
-FROM customers
-WHERE (country = 'USA'
-       OR country = 'Canada')
-AND city = 'Toronto';
+FROM Customer
+WHERE (Country = 'USA'
+       OR Country = 'Canada')
+AND City = 'Edmonton';
 
 
 -- =====================================
@@ -111,8 +115,8 @@ AND city = 'Toronto';
 -- =====================================
 
 SELECT *
-FROM customers
-WHERE first_name LIKE 'A%';
+FROM Customer
+WHERE LastName LIKE 'S%';
 
 
 -- =====================================
@@ -123,8 +127,8 @@ WHERE first_name LIKE 'A%';
 -- =====================================
 
 SELECT *
-FROM customers
-ORDER BY last_name ASC;
+FROM Customer
+ORDER BY LastName ASC;
 
 
 -- =====================================
@@ -134,10 +138,10 @@ ORDER BY last_name ASC;
 -- =====================================
 
 SELECT
-    product_name,
-    price,
-    price * 1.21 AS final_price
-FROM products;
+    Name,
+    UnitPrice,
+    UnitPrice * 1.22 AS PriceWithTax
+FROM Track;
 
 
 -- =====================================
@@ -146,8 +150,8 @@ FROM products;
 -- únicamente valores únicos.
 -- =====================================
 
-SELECT DISTINCT country
-FROM customers;
+SELECT DISTINCT Country
+FROM Customer;
 
 
 -- =====================================
@@ -161,24 +165,24 @@ FROM customers;
 -- =====================================
 
 -- Cantidad total de clientes
-SELECT COUNT(*) AS total_customers
-FROM customers;
+SELECT COUNT(*) AS TotalCustomers
+FROM Customer;
 
--- Precio promedio
-SELECT AVG(price) AS average_price
-FROM products;
+-- Precio promedio de las canciones
+SELECT AVG(UnitPrice) AS AveragePrice
+FROM Track;
 
 -- Precio mínimo
-SELECT MIN(price) AS minimum_price
-FROM products;
+SELECT MIN(UnitPrice) AS MinimumPrice
+FROM Track;
 
 -- Precio máximo
-SELECT MAX(price) AS maximum_price
-FROM products;
+SELECT MAX(UnitPrice) AS MaximumPrice
+FROM Track;
 
 -- Suma de todos los precios
-SELECT SUM(price) AS total_price
-FROM products;
+SELECT SUM(UnitPrice) AS TotalPrice
+FROM Track;
 
 
 -- =====================================
@@ -188,7 +192,7 @@ FROM products;
 -- =====================================
 
 SELECT
-    country,
-    COUNT(*) AS total_customers
-FROM customers
-GROUP BY country;
+    Country,
+    COUNT(*) AS TotalCustomers
+FROM Customer
+GROUP BY Country;
