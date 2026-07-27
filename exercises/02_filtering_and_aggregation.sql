@@ -15,6 +15,7 @@
 -- - DISTINCT
 -- - Aggregate Functions
 -- - GROUP BY
+-- - HAVING
 -- =====================================
 
 
@@ -196,3 +197,29 @@ SELECT
     COUNT(*) AS TotalCustomers
 FROM Customer
 GROUP BY Country;
+
+
+-- =====================================
+-- HAVING
+-- Filtra los grupos creados por GROUP BY.
+-- Se utiliza después de GROUP BY y suele
+-- combinarse con funciones agregadas.
+-- =====================================
+
+SELECT
+    Country,
+    COUNT(*) AS TotalCustomers
+FROM Customer
+GROUP BY Country
+HAVING COUNT(*) >= 5;
+
+
+-- =====================================
+-- Diferencia entre WHERE y HAVING
+--
+-- WHERE:
+-- Filtra filas antes de agrupar los datos.
+--
+-- HAVING:
+-- Filtra grupos después de aplicar GROUP BY.
+-- =====================================
