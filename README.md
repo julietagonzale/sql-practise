@@ -27,3 +27,6 @@ Este repositorio contiene los ejercicios y proyectos que realizo durante el curs
 - Funciones agregadas
 - GROUP BY
 - HAVING
+- JOIN
+- LEFT JOIN
+- Subconsultas
